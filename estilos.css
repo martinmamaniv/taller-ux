@@ -1,86 +1,93 @@
 :root {
-    --color-primario: #0b5cad;
-    --color-texto: #1f2933;
-    --color-suave: #52606d;
-    --color-borde: #9aa5b1;
-    --color-fondo: #f4f6f8;
-    --color-error: #b42318;
-    --color-exito: #067647;
-    --espacio: 16px;
-  }
-   
-  * { box-sizing: border-box; }
-   
-  body {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #cbd5e1;
+    --radius: 8px;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: var(--espacio);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--color-texto);
-    background: var(--color-fondo);
-  }
-   
-  .tarjeta {
-    max-width: 480px;
-    margin: 32px auto;
-    padding: 32px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  }
-   
-  .tarjeta img { width: 100%; border-radius: 8px; }
-   
-  h1 { font-size: 28px; margin: 16px 0 4px; }
-  .ayuda { color: var(--color-suave); margin: 0 0 24px; }
-   
-  fieldset { border: none; padding: 0; margin: 0 0 24px; }
-  legend { font-size: 18px; font-weight: bold; margin-bottom: 8px; }
-  label { display: block; font-weight: bold; margin: 12px 0 4px; }
-   
-  input, select {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
     width: 100%;
-    min-height: 44px;
-    padding: 8px 12px;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.field-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
     font-size: 16px;
-    border: 1px solid var(--color-borde);
-    border-radius: 8px;
-  }
-   
-  .validado input:invalid,
-  .validado select:invalid { border: 2px solid var(--color-error); }
-   
-  .acciones { display: flex; gap: 24px; flex-wrap: wrap; }
-   
-  button {
-    min-height: 44px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-   
-  .boton-principal {
-    flex: 1;
-    background: var(--color-primario);
-    color: #ffffff;
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #f97316;
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
     border: none;
-    font-weight: bold;
-  }
-   
-  .boton-principal:disabled { opacity: 0.6; cursor: wait; }
-   
-  .boton-secundario {
-    background: transparent;
-    color: var(--color-suave);
-    border: 1px solid var(--color-borde);
-  }
-   
-  :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
-   
-  .mensaje { min-height: 24px; font-weight: bold; }
-  .mensaje.error { color: var(--color-error); }
-  .mensaje.exito { color: var(--color-exito); }
-  .mensaje.info { color: var(--color-primario); }
-  
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 24px;
+    height: 44px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid #f97316;
+    outline-offset: 2px;
+}
+
+.status-message {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #16a34a;
+    text-align: center;
+}
